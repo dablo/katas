@@ -1,7 +1,0 @@
-C:\Users\David\Documents\My Dropbox\Public\CodeCatas\KarateChop\KarateChop\bin\Debug\KarateChop.dll
-C:\Users\David\Documents\My Dropbox\Public\CodeCatas\KarateChop\KarateChop\bin\Debug\KarateChop.pdb
-C:\Users\David\Documents\My Dropbox\Public\CodeCatas\KarateChop\KarateChop\bin\Debug\xunit.dll
-C:\Users\David\Documents\My Dropbox\Public\CodeCatas\KarateChop\KarateChop\bin\Debug\xunit.xml
-C:\Users\David\Documents\My Dropbox\Public\CodeCatas\KarateChop\KarateChop\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\David\Documents\My Dropbox\Public\CodeCatas\KarateChop\KarateChop\obj\Debug\KarateChop.dll
-C:\Users\David\Documents\My Dropbox\Public\CodeCatas\KarateChop\KarateChop\obj\Debug\KarateChop.pdb
