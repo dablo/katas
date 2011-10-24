@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Xunit;
 using Xunit.Sdk;
+using Xunit.Extensions;
 
 namespace KarateChop.Tests
 {
@@ -46,17 +47,19 @@ namespace KarateChop.Tests
     }
     public class KarateChopTheRealChopTests
     {
-        private int[] intArray;
+        private int[] evenArray;
+        private int[] oddArray;
         /// <summary>
         /// Initializes a new instance of the KarateChopTheRealChopTests class.
         /// </summary>
-        
+
         public KarateChopTheRealChopTests()
         {
-            intArray = CreateArray(5000);
+            evenArray = CreateEvenArray(5000);
+            oddArray = CreateOddArray(5000);
         }
 
-        private int[] CreateArray(int positioner)
+        private int[] CreateEvenArray(int positioner)
         {
             var numberlist = new List<int>();
 
@@ -70,16 +73,37 @@ namespace KarateChop.Tests
             return numberlist.ToArray();
         }
 
-        [Fact]
-        public void Zero_returns_minus1()
+        private int[] CreateOddArray(int positioner)
         {
-            Assert.Equal(-1, Karate.ChopRecursive(0, intArray));
+            var numberlist = new List<int>();
+
+            for (int i = 0; i < positioner; i++)
+            {
+                if (i % 2 != 0)
+                    numberlist.Add(i);
+            }
+
+            numberlist.Sort();
+            return numberlist.ToArray();
         }
 
-        [Fact]
-        public void Ten_returns_Index_four()
+        [Theory]
+        [InlineData(10, 5)]
+        [InlineData(8, 4)]
+        [InlineData(7, -1)]
+        public void TestOnEvenArray(int value, int index)
         {
-            Assert.Equal(4, Karate.ChopRecursive(10, intArray));
+            Assert.Equal(index, Karate.ChopRecursive(value, evenArray));
+        }
+
+        [Theory]
+        [InlineData(10, -1)]
+        [InlineData(7, 3)]
+        [InlineData(50, -1)]
+        [InlineData(81, 40)]
+        public void TestOnOddArray(int value, int index)
+        {
+            Assert.Equal(index, Karate.ChopRecursive(value, oddArray));
         }
     }
 }
