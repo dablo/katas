@@ -103,6 +103,7 @@ namespace KarateChop.Tests
         [InlineData(81, 40)]
         public void TestOnOddArray(int value, int index)
         {
+            //Hej!
             Assert.Equal(index, Karate.ChopRecursive(value, oddArray));
         }
     }
